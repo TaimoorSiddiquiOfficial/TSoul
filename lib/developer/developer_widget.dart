@@ -1,19 +1,19 @@
-import '../developer/developer_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_web_view.dart';
+import '../home_page/home_page_widget.dart';
 import '../my_account/my_account_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key key}) : super(key: key);
+class DeveloperWidget extends StatefulWidget {
+  const DeveloperWidget({Key key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _DeveloperWidgetState createState() => _DeveloperWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _DeveloperWidgetState extends State<DeveloperWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -36,7 +36,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 60),
                 child: FlutterFlowWebView(
-                  url: 'https://music.taimoorsiddiqui.com',
+                  url: 'https://taimoorsiddiqui.com',
                   bypass: false,
                   verticalScroll: false,
                   horizontalScroll: false,
@@ -76,8 +76,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         onTap: () async {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => DeveloperWidget(),
+                            PageTransition(
+                              type: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 300),
+                              reverseDuration: Duration(milliseconds: 300),
+                              child: DeveloperWidget(),
                             ),
                           );
                         },

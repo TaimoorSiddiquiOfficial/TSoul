@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:t_soul/home_page/home_page_widget.dart';
+import 'package:t_soul/welcome/welcome_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +16,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool displaySplashImage = true;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +36,17 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePageWidget(),
+      home: displaySplashImage
+          ? Container(
+              color: Colors.black,
+              child: Builder(
+                builder: (context) => Image.asset(
+                  'assets/images/01e3380a2a804609c5ce3da0c04bd959.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            )
+          : WelcomeWidget(),
     );
   }
 }
