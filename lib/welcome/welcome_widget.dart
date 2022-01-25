@@ -1,7 +1,7 @@
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../home_page/home_page_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -91,7 +91,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                 type: PageTransitionType.bottomToTop,
                 duration: Duration(milliseconds: 100),
                 reverseDuration: Duration(milliseconds: 100),
-                child: HomePageWidget(),
+                child: NavBarPage(initialPage: 'HomePage'),
               ),
             );
           },
